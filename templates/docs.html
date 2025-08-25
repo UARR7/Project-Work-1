@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Viewer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Generated Documentation</h1>
+            <a href="/" class="btn-back">← Back to Dashboard</a>
+        </header>
+
+        <div class="docs-browser">
+            <div class="docs-list" id="docs-list">
+                <h2>Available Documentation</h2>
+                <div class="loading">Loading documentation...</div>
+            </div>
+            
+            <div class="docs-viewer" id="docs-viewer">
+                <iframe id="docs-frame" src="about:blank"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load and display available documentation
+        function loadDocsList() {
+            // This would typically fetch from an API endpoint
+            // For now, we'll show a placeholder
+            const docsList = document.getElementById('docs-list');
+            docsList.innerHTML = `
+                <h2>Available Documentation</h2>
+                <div class="no-docs">
+                    <p>No documentation generated yet.</p>
+                    <p>Push to a connected repository or use manual generation to create documentation.</p>
+                </div>
+            `;
+        }
+
+        // Load documentation on page load
+        window.addEventListener('load', loadDocsList);
+    </script>
+</body>
+</html>"""

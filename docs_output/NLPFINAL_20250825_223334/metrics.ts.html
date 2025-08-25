@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metrics.ts - Documentation</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        h1 { color: #333; border-bottom: 3px solid #667eea; padding-bottom: 15px; }
+        h2 { color: #666; margin-top: 30px; }
+        .file-info { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .ai-summary { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .code-container { background: #f8f8f8; border-radius: 10px; overflow-x: auto; margin: 20px 0; box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); }
+        .functions, .classes { margin: 20px 0; }
+        .function-item, .class-item { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); padding: 20px; margin: 15px 0; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .back-link { display: inline-block; margin-bottom: 20px; color: white; text-decoration: none; background: #667eea; padding: 10px 20px; border-radius: 25px; transition: background 0.3s; }
+        .back-link:hover { background: #764ba2; }
+        .language-badge { display: inline-block; background: #667eea; color: white; padding: 6px 12px; border-radius: 15px; font-size: 14px; margin-left: 10px; }
+        pre { margin: 0; padding: 15px; }
+        code { font-family: 'Consolas', 'Monaco', 'Courier New', monospace; }
+        .ai-description { background: rgba(102, 126, 234, 0.1); padding: 10px; border-radius: 5px; margin: 10px 0; border-left: 3px solid #667eea; }
+        .docstring { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0; border-left: 3px solid #28a745; }
+        .element-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .element-header h4 { margin: 0; flex: 1; }
+        .line-number { background: #6c757d; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Repository</a>
+        
+        <h1>💙 metrics.ts <span class="language-badge">TypeScript</span></h1>
+        
+        <div class="file-info">
+            <p><strong>📍 Path:</strong> src/utils/metrics.ts</p>
+            <p><strong>📏 Size:</strong> 1738 bytes</p>
+            <p><strong>📊 Lines:</strong> 48</p>
+            <p><strong>🏷️ Language:</strong> TypeScript</p>
+        </div>
+        
+        
+                <div class="ai-summary">
+                    <h3>🤖 AI Summary</h3>
+                    <p>Contains 4 function(s).</p>
+                </div>
+                
+        
+        
+        <h2>⚡ Functions</h2>
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>⚡ getNGrams(text: string, n: number)</h4>
+                        <span class="line-number">Line 3</span>
+                    </div>
+                    <div class="ai-description"><strong>🤖 AI Description:</strong> Retrieves n grams</div>
+                    <div class="docstring"><strong>📖 Documentation:</strong><pre>// BLEU score implementation</pre></div>
+                </div>
+            
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>⚡ for(let i = 0; i <= words.length - n; i++)</h4>
+                        <span class="line-number">Line 6</span>
+                    </div>
+                    <div class="ai-description"><strong>🤖 AI Description:</strong> Function that handles for</div>
+                    <div class="docstring"><strong>📖 Documentation:</strong><pre>// BLEU score implementation</pre></div>
+                </div>
+            
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>⚡ for(let i = 0; i < translations.length; i++)</h4>
+                        <span class="line-number">Line 40</span>
+                    </div>
+                    <div class="ai-description"><strong>🤖 AI Description:</strong> Function that handles for</div>
+                    
+                </div>
+            
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>⚡ for(let j = i + 1; j < translations.length; j++)</h4>
+                        <span class="line-number">Line 41</span>
+                    </div>
+                    <div class="ai-description"><strong>🤖 AI Description:</strong> Function that handles for</div>
+                    
+                </div>
+            
+        
+        <h2>📋 Source Code</h2>
+        <div class="code-container">
+            <pre><code><span style="color: #666; margin-right: 10px;">   1</span>// BLEU score implementation<br><span style="color: #666; margin-right: 10px;">   2</span>export function calculateBLEUScore(reference: string, candidate: string): number {<br><span style="color: #666; margin-right: 10px;">   3</span>    const getNGrams = (text: string, n: number) => {<br><span style="color: #666; margin-right: 10px;">   4</span>      const words = text.toLowerCase().split(' ');<br><span style="color: #666; margin-right: 10px;">   5</span>      const ngrams: string[] = [];<br><span style="color: #666; margin-right: 10px;">   6</span>      for (let i = 0; i <= words.length - n; i++) {<br><span style="color: #666; margin-right: 10px;">   7</span>        ngrams.push(words.slice(i, i + n).join(' '));<br><span style="color: #666; margin-right: 10px;">   8</span>      }<br><span style="color: #666; margin-right: 10px;">   9</span>      return ngrams;<br><span style="color: #666; margin-right: 10px;">  10</span>    };<br><span style="color: #666; margin-right: 10px;">  11</span>  <br><span style="color: #666; margin-right: 10px;">  12</span>    const countMatches = (reference: string[], candidate: string[]): number => {<br><span style="color: #666; margin-right: 10px;">  13</span>      const refSet = new Set(reference);<br><span style="color: #666; margin-right: 10px;">  14</span>      return candidate.filter(gram => refSet.has(gram)).length;<br><span style="color: #666; margin-right: 10px;">  15</span>    };<br><span style="color: #666; margin-right: 10px;">  16</span>  <br><span style="color: #666; margin-right: 10px;">  17</span>    // Calculate for unigrams and bigrams<br><span style="color: #666; margin-right: 10px;">  18</span>    const ref1Grams = getNGrams(reference, 1);<br><span style="color: #666; margin-right: 10px;">  19</span>    const cand1Grams = getNGrams(candidate, 1);<br><span style="color: #666; margin-right: 10px;">  20</span>    const ref2Grams = getNGrams(reference, 2);<br><span style="color: #666; margin-right: 10px;">  21</span>    const cand2Grams = getNGrams(candidate, 2);<br><span style="color: #666; margin-right: 10px;">  22</span>  <br><span style="color: #666; margin-right: 10px;">  23</span>    const matches1 = countMatches(ref1Grams, cand1Grams);<br><span style="color: #666; margin-right: 10px;">  24</span>    const matches2 = countMatches(ref2Grams, cand2Grams);<br><span style="color: #666; margin-right: 10px;">  25</span>  <br><span style="color: #666; margin-right: 10px;">  26</span>    const precision1 = matches1 / cand1Grams.length || 0;<br><span style="color: #666; margin-right: 10px;">  27</span>    const precision2 = matches2 / cand2Grams.length || 0;<br><span style="color: #666; margin-right: 10px;">  28</span>  <br><span style="color: #666; margin-right: 10px;">  29</span>    // Geometric mean of unigram and bigram precision<br><span style="color: #666; margin-right: 10px;">  30</span>    return Math.sqrt(precision1 * precision2);<br><span style="color: #666; margin-right: 10px;">  31</span>  }<br><span style="color: #666; margin-right: 10px;">  32</span>  <br><span style="color: #666; margin-right: 10px;">  33</span>  // Calculate similarity between translations<br><span style="color: #666; margin-right: 10px;">  34</span>  export function calculateTranslationConfidence(translations: string[]): number {<br><span style="color: #666; margin-right: 10px;">  35</span>    if (translations.length < 2) return 0.8; // Default confidence for single translation<br><span style="color: #666; margin-right: 10px;">  36</span>  <br><span style="color: #666; margin-right: 10px;">  37</span>    let totalScore = 0;<br><span style="color: #666; margin-right: 10px;">  38</span>    let comparisons = 0;<br><span style="color: #666; margin-right: 10px;">  39</span>  <br><span style="color: #666; margin-right: 10px;">  40</span>    for (let i = 0; i < translations.length; i++) {<br><span style="color: #666; margin-right: 10px;">  41</span>      for (let j = i + 1; j < translations.length; j++) {<br><span style="color: #666; margin-right: 10px;">  42</span>        totalScore += calculateBLEUScore(translations[i], translations[j]);<br><span style="color: #666; margin-right: 10px;">  43</span>        comparisons++;<br><span style="color: #666; margin-right: 10px;">  44</span>      }<br><span style="color: #666; margin-right: 10px;">  45</span>    }<br><span style="color: #666; margin-right: 10px;">  46</span>  <br><span style="color: #666; margin-right: 10px;">  47</span>    return comparisons > 0 ? totalScore / comparisons : 0.8;<br><span style="color: #666; margin-right: 10px;">  48</span>  }</code></pre>
+        </div>
+    </div>
+</body>
+</html>

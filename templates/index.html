@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Documentation Tool - Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Auto Documentation Tool</h1>
+            <p>Automatically generate documentation from your repositories on every push</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="card">
+                <h2>📊 System Status</h2>
+                <div class="status-indicator" id="status">
+                    <span class="status-dot online"></span>
+                    System Online
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number" id="docs-count">-</span>
+                        <span class="stat-label">Generated Docs</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🔧 Manual Generation</h2>
+                <form id="manual-form" class="manual-form">
+                    <div class="form-group">
+                        <label for="repo-url">Repository URL:</label>
+                        <input 
+                            type="url" 
+                            id="repo-url" 
+                            name="repo_url" 
+                            placeholder="https://github.com/user/repo.git"
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="branch">Branch:</label>
+                        <input 
+                            type="text" 
+                            id="branch" 
+                            name="branch" 
+                            value="main"
+                            placeholder="main"
+                        >
+                    </div>
+                    <button type="submit" class="btn-primary">Generate Documentation</button>
+                </form>
+                <div id="manual-status" class="status-message"></div>
+            </div>
+        </div>
+
+        <div class="card recent-updates">
+            <h2>📝 Recent Updates</h2>
+            {% if updates %}
+                <div class="updates-list">
+                    {% for update in updates %}
+                    <div class="update-item">
+                        <div class="update-header">
+                            <strong>{{ update.repo_url.split('/')[-1].replace('.git', '') }}</strong>
+                            <span class="update-time">{{ update.timestamp[:19].replace('T', ' ') }}</span>
+                        </div>
+                        <div class="update-details">
+                            <span class="branch-tag">{{ update.branch }}</span>
+                            <span class="commit-count">{{ update.commit_count }} commits</span>
+                        </div>
+                        <div class="update-message">{{ update.latest_commit }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="no-updates">
+                    <p>No recent updates. Push to a connected repository or use manual generation to get started.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="card setup-instructions">
+            <h2>🔗 Setup Instructions</h2>
+            <div class="instruction-steps">
+                <div class="step">
+                    <h3>1. Configure Webhook</h3>
+                    <p>Add this webhook URL to your repository:</p>
+                    <code class="webhook-url" id="webhook-url">Loading...</code>
+                    <button onclick="copyWebhookUrl()" class="btn-copy">Copy</button>
+                </div>
+                <div class="step">
+                    <h3>2. Set Content Type</h3>
+                    <p>Set content type to: <code>application/json</code></p>
+                </div>
+                <div class="step">
+                    <h3>3. Select Events</h3>
+                    <p>Enable: <code>Push events</code></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>"""
