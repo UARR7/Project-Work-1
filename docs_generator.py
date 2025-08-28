@@ -1589,6 +1589,39 @@ class DocsGenerator:
         os.makedirs(self.output_dir, exist_ok=True)
         os.makedirs(self.temp_dir, exist_ok=True)
     
+    # def generate_from_repo(self, repo_url, branch='main', use_ai_enhancement=True):
+    #     """Generate documentation from a Git repository"""
+    #     temp_repo_path = None
+    #     try:
+    #         # Clone repository
+    #         logger.info(f"Cloning repository: {repo_url}")
+    #         temp_repo_path = self._clone_repository(repo_url, branch)
+            
+    #         if not temp_repo_path:
+    #             return False
+            
+    #         # Analyze repository structure
+    #         repo_info = self._analyze_repository(temp_repo_path)
+            
+    #         # Enhance with AI if enabled
+    #         if use_ai_enhancement:
+    #             logger.info("Enhancing documentation with AI...")
+    #             self._enhance_with_ai(repo_info)
+            
+    #         # Generate documentation
+    #         self._generate_documentation(repo_info, temp_repo_path)
+            
+    #         logger.info("Documentation generation completed successfully")
+    #         return True
+            
+    #     except Exception as e:
+    #         logger.error(f"Documentation generation failed: {e}")
+    #         return False
+    #     finally:
+    #         # Cleanup
+    #         if temp_repo_path and os.path.exists(temp_repo_path):
+    #             shutil.rmtree(temp_repo_path, ignore_errors=True)
+
     def generate_from_repo(self, repo_url, branch='main', use_ai_enhancement=True):
         """Generate documentation from a Git repository"""
         temp_repo_path = None
@@ -1602,6 +1635,9 @@ class DocsGenerator:
             
             # Analyze repository structure
             repo_info = self._analyze_repository(temp_repo_path)
+            
+            # Store repo_info as instance attribute for XAI access
+            self.repo_info = repo_info
             
             # Enhance with AI if enabled
             if use_ai_enhancement:
@@ -2238,7 +2274,7 @@ class DocsGenerator:
     
     def _generate_index_page(self, repo_info, output_dir):
         """Generate repository index page"""
-        ai_badge = '🤖 AI Enhanced' if repo_info.get('ai_enhanced', False) else ''
+        ai_badge = ' AI Enhanced' if repo_info.get('ai_enhanced', False) else ''
         
         template = '''<!DOCTYPE html>
 <html lang="en">
@@ -2342,9 +2378,9 @@ class DocsGenerator:
         # AI summary section
         ai_summary_section = ''
         if repo_info.get('ai_enhanced'):
-            ai_summary_section = '<p><strong>🤖 AI Enhancement:</strong> This documentation has been enhanced with AI-generated descriptions and summaries for better understanding.</p>'
+            ai_summary_section = '<p><strong>AI Enhancement:</strong> This documentation has been enhanced with AI-generated descriptions and summaries for better understanding.</p>'
         
-        ai_note = '<br>🤖 Enhanced with AI-generated descriptions' if repo_info.get('ai_enhanced') else ''
+        ai_note = '<br>Enhanced with AI-generated descriptions' if repo_info.get('ai_enhanced') else ''
         
         # Render template
         html_content = template.format(
@@ -2408,7 +2444,7 @@ class DocsGenerator:
             if file_info.get('ai_summary'):
                 ai_summary_section = f'''
                 <div class="ai-summary">
-                    <h3>🤖 AI Summary</h3>
+                    <h3> AI Summary</h3>
                     <p>{file_info['ai_summary']}</p>
                 </div>
                 '''
@@ -2506,7 +2542,7 @@ class DocsGenerator:
         language_info_map = {
             '.py': {
                 'display_name': 'Python',
-                'file_icon': '🐍',
+                'file_icon': '📔',
                 'function_icon': '⚙️',
                 'function_term': 'Functions',
                 'class_icon': '🏛️',
@@ -2514,7 +2550,7 @@ class DocsGenerator:
             },
             '.js': {
                 'display_name': 'JavaScript',
-                'file_icon': '💛',
+                'file_icon': '📔',
                 'function_icon': '⚡',
                 'function_term': 'Functions',
                 'class_icon': '🏗️',
@@ -2522,7 +2558,7 @@ class DocsGenerator:
             },
             '.ts': {
                 'display_name': 'TypeScript',
-                'file_icon': '💙',
+                'file_icon': '📔',
                 'function_icon': '⚡',
                 'function_term': 'Functions',
                 'class_icon': '🏗️',
@@ -2651,7 +2687,7 @@ class DocsGenerator:
         for func in functions:
             ai_desc = ''
             if func.get('ai_description'):
-                ai_desc = f'<div class="ai-description"><strong>🤖 AI Description:</strong> {func["ai_description"]}</div>'
+                ai_desc = f'<div class="ai-description"><strong> AI Description:</strong> {func["ai_description"]}</div>'
             
             docstring_section = ''
             if func.get('docstring'):
@@ -2677,7 +2713,7 @@ class DocsGenerator:
         for cls in classes:
             ai_desc = ''
             if cls.get('ai_description'):
-                ai_desc = f'<div class="ai-description"><strong>🤖 AI Description:</strong> {cls["ai_description"]}</div>'
+                ai_desc = f'<div class="ai-description"><strong>AI Description:</strong> {cls["ai_description"]}</div>'
             
             docstring_section = ''
             if cls.get('docstring'):

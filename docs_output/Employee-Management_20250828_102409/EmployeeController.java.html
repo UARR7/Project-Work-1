@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeController.java - Documentation</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        h1 { color: #333; border-bottom: 3px solid #667eea; padding-bottom: 15px; }
+        h2 { color: #666; margin-top: 30px; }
+        .file-info { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .ai-summary { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .code-container { background: #f8f8f8; border-radius: 10px; overflow-x: auto; margin: 20px 0; box-shadow: inset 0 2px 5px rgba(0,0,0,0.1); }
+        .functions, .classes { margin: 20px 0; }
+        .function-item, .class-item { background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%); padding: 20px; margin: 15px 0; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .back-link { display: inline-block; margin-bottom: 20px; color: white; text-decoration: none; background: #667eea; padding: 10px 20px; border-radius: 25px; transition: background 0.3s; }
+        .back-link:hover { background: #764ba2; }
+        .language-badge { display: inline-block; background: #667eea; color: white; padding: 6px 12px; border-radius: 15px; font-size: 14px; margin-left: 10px; }
+        pre { margin: 0; padding: 15px; }
+        code { font-family: 'Consolas', 'Monaco', 'Courier New', monospace; }
+        .ai-description { background: rgba(102, 126, 234, 0.1); padding: 10px; border-radius: 5px; margin: 10px 0; border-left: 3px solid #667eea; }
+        .docstring { background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 10px 0; border-left: 3px solid #28a745; }
+        .element-header { display: flex; align-items: center; margin-bottom: 10px; }
+        .element-header h4 { margin: 0; flex: 1; }
+        .line-number { background: #6c757d; color: white; padding: 2px 8px; border-radius: 10px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Repository</a>
+        
+        <h1>☕ EmployeeController.java <span class="language-badge">Java</span></h1>
+        
+        <div class="file-info">
+            <p><strong>📍 Path:</strong> Backend/src/main/java/com/employeemgmt/employeemgmt/controller/EmployeeController.java</p>
+            <p><strong>📏 Size:</strong> 1898 bytes</p>
+            <p><strong>📊 Lines:</strong> 54</p>
+            <p><strong>🏷️ Language:</strong> Java</p>
+        </div>
+        
+        
+                <div class="ai-summary">
+                    <h3> AI Summary</h3>
+                    <p>Contains 1 class(es). Contains 5 function(s).</p>
+                </div>
+                
+        
+        <h2>🏛️ Classes</h2>
+                <div class="class-item">
+                    <div class="element-header">
+                        <h4>🏛️ EmployeeController</h4>
+                        <span class="line-number">Line 17</span>
+                    </div>
+                    <div class="ai-description"><strong>AI Description:</strong> Controls employee</div>
+                    
+                </div>
+            
+        <h2>🔧 Methods</h2>
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>🔧 createEmployee(@RequestBody EmployeeDto employeeDto)</h4>
+                        <span class="line-number">Line 21</span>
+                    </div>
+                    <div class="ai-description"><strong> AI Description:</strong> Creates employee</div>
+                    
+                </div>
+            
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>🔧 getEmployeeById(@PathVariable("id")</h4>
+                        <span class="line-number">Line 28</span>
+                    </div>
+                    <div class="ai-description"><strong> AI Description:</strong> Retrieves employee by id</div>
+                    
+                </div>
+            
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>🔧 getAllEmployees()</h4>
+                        <span class="line-number">Line 35</span>
+                    </div>
+                    <div class="ai-description"><strong> AI Description:</strong> Retrieves all employees</div>
+                    
+                </div>
+            
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>🔧 updateEmployee(@PathVariable("id")</h4>
+                        <span class="line-number">Line 41</span>
+                    </div>
+                    <div class="ai-description"><strong> AI Description:</strong> Updates employee</div>
+                    
+                </div>
+            
+                <div class="function-item">
+                    <div class="element-header">
+                        <h4>🔧 deleteEmployee(@PathVariable("id")</h4>
+                        <span class="line-number">Line 47</span>
+                    </div>
+                    <div class="ai-description"><strong> AI Description:</strong> Deletes employee</div>
+                    
+                </div>
+            
+        
+        <h2>📋 Source Code</h2>
+        <div class="code-container">
+            <pre><code><span style="color: #666; margin-right: 10px;">   1</span>package com.employeemgmt.employeemgmt.controller;<br><span style="color: #666; margin-right: 10px;">   2</span><br><span style="color: #666; margin-right: 10px;">   3</span>import com.employeemgmt.employeemgmt.dto.EmployeeDto;<br><span style="color: #666; margin-right: 10px;">   4</span>import com.employeemgmt.employeemgmt.sevice.EmployeeService;<br><span style="color: #666; margin-right: 10px;">   5</span>import lombok.AllArgsConstructor;<br><span style="color: #666; margin-right: 10px;">   6</span>import org.springframework.http.HttpStatus;<br><span style="color: #666; margin-right: 10px;">   7</span>import org.springframework.http.ResponseEntity;<br><span style="color: #666; margin-right: 10px;">   8</span>import org.springframework.web.bind.annotation.*;<br><span style="color: #666; margin-right: 10px;">   9</span><br><span style="color: #666; margin-right: 10px;">  10</span>import java.util.List;<br><span style="color: #666; margin-right: 10px;">  11</span><br><span style="color: #666; margin-right: 10px;">  12</span><br><span style="color: #666; margin-right: 10px;">  13</span>@RestController<br><span style="color: #666; margin-right: 10px;">  14</span>@AllArgsConstructor<br><span style="color: #666; margin-right: 10px;">  15</span>@RequestMapping("/api/employee")<br><span style="color: #666; margin-right: 10px;">  16</span>@CrossOrigin(origins = "http://localhost:5173")<br><span style="color: #666; margin-right: 10px;">  17</span>public class EmployeeController {<br><span style="color: #666; margin-right: 10px;">  18</span>    private EmployeeService employeeService;<br><span style="color: #666; margin-right: 10px;">  19</span><br><span style="color: #666; margin-right: 10px;">  20</span>    @PostMapping<br><span style="color: #666; margin-right: 10px;">  21</span>    public ResponseEntity<EmployeeDto> createEmployee(@RequestBody EmployeeDto employeeDto) {<br><span style="color: #666; margin-right: 10px;">  22</span>        EmployeeDto savedEmployee = employeeService.createEmployee(employeeDto);<br><span style="color: #666; margin-right: 10px;">  23</span>        return new ResponseEntity<>(savedEmployee, HttpStatus.CREATED);<br><span style="color: #666; margin-right: 10px;">  24</span><br><span style="color: #666; margin-right: 10px;">  25</span>    }<br><span style="color: #666; margin-right: 10px;">  26</span><br><span style="color: #666; margin-right: 10px;">  27</span>    @GetMapping("{id}")<br><span style="color: #666; margin-right: 10px;">  28</span>    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable("id") Long employeeId) {<br><span style="color: #666; margin-right: 10px;">  29</span>        EmployeeDto employeeDto = employeeService.getEmployeeById(employeeId);<br><span style="color: #666; margin-right: 10px;">  30</span>        return new ResponseEntity<>(employeeDto, HttpStatus.OK);<br><span style="color: #666; margin-right: 10px;">  31</span>    }<br><span style="color: #666; margin-right: 10px;">  32</span><br><span style="color: #666; margin-right: 10px;">  33</span><br><span style="color: #666; margin-right: 10px;">  34</span>    @GetMapping<br><span style="color: #666; margin-right: 10px;">  35</span>    public ResponseEntity<List<EmployeeDto>> getAllEmployees() {<br><span style="color: #666; margin-right: 10px;">  36</span>        List<EmployeeDto> employees = employeeService.getAllEmployees();<br><span style="color: #666; margin-right: 10px;">  37</span>        return new ResponseEntity<>(employees, HttpStatus.OK);<br><span style="color: #666; margin-right: 10px;">  38</span>    }<br><span style="color: #666; margin-right: 10px;">  39</span><br><span style="color: #666; margin-right: 10px;">  40</span>    @PutMapping("{id}")<br><span style="color: #666; margin-right: 10px;">  41</span>    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable("id") Long employeeId, @RequestBody EmployeeDto updatedEmployee) {<br><span style="color: #666; margin-right: 10px;">  42</span>        EmployeeDto emplyeeDto = employeeService.updateEmployee(employeeId, updatedEmployee);<br><span style="color: #666; margin-right: 10px;">  43</span>        return new ResponseEntity<>(emplyeeDto,HttpStatus.OK);<br><span style="color: #666; margin-right: 10px;">  44</span>    }<br><span style="color: #666; margin-right: 10px;">  45</span><br><span style="color: #666; margin-right: 10px;">  46</span>    @DeleteMapping("{id}")<br><span style="color: #666; margin-right: 10px;">  47</span>    public ResponseEntity<String> deleteEmployee(@PathVariable("id") Long employeeId) {<br><span style="color: #666; margin-right: 10px;">  48</span>        employeeService.deleteEmployee(employeeId);<br><span style="color: #666; margin-right: 10px;">  49</span>        return ResponseEntity.ok("Employee deleted successfully");<br><span style="color: #666; margin-right: 10px;">  50</span>    }<br><span style="color: #666; margin-right: 10px;">  51</span><br><span style="color: #666; margin-right: 10px;">  52</span><br><span style="color: #666; margin-right: 10px;">  53</span>}<br><span style="color: #666; margin-right: 10px;">  54</span></code></pre>
+        </div>
+    </div>
+</body>
+</html>
